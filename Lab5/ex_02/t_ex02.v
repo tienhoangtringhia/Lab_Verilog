@@ -11,15 +11,15 @@ module t_ex02;
 	wire [6:0] led; 
 	
 	reg [2:0] t_s;
-	reg [2:0] t_data;
+	reg [6:0] t_data;
 	reg t_clk;
 
 	assign s = t_s; 
-	assign u = t_data; 
-	assign v = t_data; 
-	assign w = t_data; 
-	assign x = t_data; 
-	assign y = t_data; 
+	assign u = t_data[2:0]; 
+	assign v = t_data[3:1]; 
+	assign w = t_data[4:2];  
+	assign x = t_data[5:3];  
+	assign y = t_data[6:4]; 
   
   always begin
         #0 t_clk = 0;
@@ -31,44 +31,44 @@ module t_ex02;
 
 	initial begin
 		# 20 t_s = 3'b000;
-			 t_data = 3'b000;
-		# 20 t_data = 3'b001;
-		# 20 t_data = 3'b010;
+			 t_data = 7'b1011000;
+		# 20 t_data = 7'b1110001;
+		# 20 t_data = 7'b1100010;
 		
 		# 20 t_s = 3'b001;
-			 t_data = 3'b011;
-		# 20 t_data = 3'b100;
-		# 20 t_data = 3'b101;
+			 t_data = 7'b0010110;
+		# 20 t_data = 7'b1101001;
+		# 20 t_data = 7'b1001011;
 		
 		# 20 t_s = 3'b010;
-			 t_data = 3'b110;
-		# 20 t_data = 3'b111;
-		# 20 t_data = 3'b000;
+			 t_data = 7'b0011000;
+		# 20 t_data = 7'b0011110;
+		# 20 t_data = 7'b1100010;
 		
 		# 20 t_s = 3'b011;
-			 t_data = 3'b001;
-		# 20 t_data = 3'b010;
-		# 20 t_data = 3'b011;
+			 t_data = 7'b1001110;
+		# 20 t_data = 7'b1010001;
+		# 20 t_data = 7'b0011100;
 		
 		# 20 t_s = 3'b100;
-			 t_data = 3'b100;
-		# 20 t_data = 3'b101;
-		# 20 t_data = 3'b110;
+			 t_data = 7'b1001010;
+		# 20 t_data = 7'b1011111;
+		# 20 t_data = 7'b1101001;
 		
 		# 20 t_s = 3'b101;
-			 t_data = 3'b111;
-		# 20 t_data = 3'b000;
-		# 20 t_data = 3'b001;
+			 t_data = 7'b1110011;
+		# 20 t_data = 7'b1101010;
+		# 20 t_data = 7'b1010011;
 		
 		# 20 t_s = 3'b110;
-			 t_data = 3'b010;
-		# 20 t_data = 3'b011;
-		# 20 t_data = 3'b100;
+			 t_data = 7'b1000110;
+		# 20 t_data = 7'b0111010;
+		# 20 t_data = 7'b0101101;
 		
 		# 20 t_s = 3'b111;
-			 t_data = 3'b101;
-		# 20 t_data = 3'b110;
-		# 20 t_data = 3'b111;
+			 t_data = 7'b0010101;
+		# 20 t_data = 7'b0001101;
+		# 20 t_data = 7'b1110110;
 		
 		# 40 $finish;
 	end
